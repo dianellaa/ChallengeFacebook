@@ -1,21 +1,12 @@
 const express = require('express')
 const app = express()
-require('./config/mongo')      
-const routes = require('./config/routes')        
-const feed = require('./model/feed')
+require('../config/mongo')      
+const routes = require('../config/routes')        
+const feed = require('../model/feed')
 
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: true}))
-
-
-
-
-
-
-
-
-
 
 
 
