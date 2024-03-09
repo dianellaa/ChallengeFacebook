@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background-color: rgb(228, 215, 215);   
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            border: none;
+            border-radius: 2px;
+        }
+        textarea{
+            width: 500px;
+            height: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            border-radius:5px ;
+            border: 1px solid black;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+   <h3>Add a Post</h3>
+    <form action="/feed" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <br>
+        <textarea name="text" placeholder="Message"></textarea>
+        <br>
+        <button href="/feed">Submit</button>
+    </form>
+    <% for (let i = 0; i < feed.length; i++) { %>
+
+       <h3><%= feed[i].name %></h3>
+       <p><%= feed[i].text %></p>
+       <p><%= feed[i].created_at %></p>
+       <a href="/fullFeed/<%=feed[i]._id %>" style="color: blueviolet;">See more</a>
+
+  <%  } %>
+   
+</body>
+</html

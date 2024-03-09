@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit A Post</title>
+    <style>
+        body{
+            background-color: rgb(228, 215, 215);
+            
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            border: none;
+            border-radius: 2px;
+        }
+        textarea{
+            width: 500px;
+            height: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button{
+            
+            width: 100px;
+            height: 40px;
+            border-radius:5px ;
+            margin: 2px;
+            border: 1px solid black;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <a href="/feed">Home</a>
+    <h3>Edit a post</h3>
+    <form action="/edit-feed/<%=feed._id%>" method="post">
+
+    <input type="text" name="name" value="<%=feed.name%>">
+    <br>
+    <textarea name="text" placeholder="Message"><%= feed.text %></textarea>
+    <br>
+    <button >Submit</button>
+    </form>
+</body>
+</html>

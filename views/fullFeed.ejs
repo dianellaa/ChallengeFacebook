@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show one page</title>
+    <style>
+        body{
+            background-color: rgb(228, 215, 215);
+            
+        }
+        button{
+            
+            width: 100px;
+            height: 40px;
+            border-radius:5px ;
+            margin: 2px;
+            border: 1px solid black;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="/fullFeed"></a>
+    <h1>Welcome To Facebook</h1>
+    <div>
+        <h3><%= feed.name %></h3>
+        <p><%= feed.text %></p>
+        <p><%= feed.created_at %></p>
+    </div>
+    
+    <form action="/delete-feed/<%=feed._id%>", method="post"> 
+<button>Delete</button>
+    </form>
+    <form action="/editFeed/<%=feed._id%>", method="get"> 
+        <button>Edit Post</button>
+            </form>
+
+</body>
+</html>
